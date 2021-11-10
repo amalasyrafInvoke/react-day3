@@ -1,0 +1,17 @@
+.productList_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.title_container > * {
+  margin: 1rem;
+}
