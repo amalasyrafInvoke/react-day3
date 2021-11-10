@@ -10,29 +10,21 @@ export default class Product extends Component {
     return (
       <div className={classes.product_container}>
         <div className={classes.imageHolder}>
-          <img src={this.props.src} alt='Product' width={100} height={100} />
+          <img src={this.props.src} alt='Product' width={350} height={350} />
         </div>
 
-        <div
-          style={{
-            width: '200px',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <h3>{this.props.name}</h3>
-          <h4>{this.props.price}</h4>
+        <div className={classes.textContainer}>
           <Link
             to={`/dashboard/${this.props.prodID}`}
             state={this.props.product}
           >
-            <button>Go</button>
+            <h1>{this.props.name}</h1>
           </Link>
+          <h4>{this.props.price}</h4>
+          <div style={{ maxWidth: '250px' }}>
+            <p>{this.props.shortDesc}</p>
+          </div>
         </div>
-        <p>{this.props.shortDesc}</p>
-        {/* <p>Long Desc</p> */}
       </div>
     );
   }

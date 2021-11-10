@@ -2,13 +2,33 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 1rem;
+  padding: 1.5rem;
+  border-radius: 5px;
+  border: 1px solid rgb(71, 114, 114);
 }
 
 .imageHolder {
-  width: 100px;
-  height: 100px;
+  width: 350px;
+  height: 350px;
   background-color: gray;
-  border-radius: 10px;
+  margin: 0 2rem;
+}
+
+.textContainer {
+  display: flex;
+  background-color: rgb(71, 114, 114);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  width: 350px;
+  height: 350px;
+}
+
+.textContainer > * {
+  margin: 5px 0;
 }

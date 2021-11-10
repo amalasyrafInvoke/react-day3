@@ -21,6 +21,8 @@ export default class Dashboard extends Component {
       <div className={classes.productList_container}>
         <div className={classes.title_container}>
           <h2>Product List</h2>
+        </div>
+        <div className={classes.title_container}>
           <Link to='/create'>Create New Product </Link>
           <input
             type='text'

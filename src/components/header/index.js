@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Outlet } from 'react-router';
+import { Link } from 'react-router-dom';
 import classes from './header.module.css';
 
 export default class Header extends Component {
@@ -7,8 +8,9 @@ export default class Header extends Component {
     return (
       <div>
         <header>
-          <h3>Logo</h3>
-          <ul></ul>
+          <Link to='/'>
+            <h3>CarList</h3>
+          </Link>
         </header>
         <Outlet />
       </div>
