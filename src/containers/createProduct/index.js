@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { products } from '../../assets/products_data';
+import classes from './createProduct.module.css';
 
-export default class CreateProduct extends Component {
+export default function WithNavigate(props) {
+  let navigate = useNavigate();
+  return <CreateProduct navigate={navigate} />;
+}
+class CreateProduct extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,16 +19,20 @@ export default class CreateProduct extends Component {
   }
 
   buttonOnClick = () => {
-
     console.log(this.state);
     console.log(products);
-  
-    if (!this.state.name || !this.state.id || !this.state.description || !this.state.cost) {
+
+    if (
+      !this.state.name ||
+      !this.state.id ||
+      !this.state.description ||
+      !this.state.cost
+    ) {
       alert('All fields must be filled');
       return;
     }
 
-    if (products.find(product => product.id === this.state.id)) {
+    if (products.find((product) => product.id === this.state.id)) {
       alert('ID existed');
       return;
     }
@@ -33,16 +43,17 @@ export default class CreateProduct extends Component {
       image: null,
       cost: this.state.cost,
       short_description: this.state.description,
-      bullet_description: []
-    })
+      bullet_description: [],
+    });
 
     console.log(products);
 
-  }
+    return this.props.navigate('/');
+  };
 
   render() {
     return (
-      <form>
+      <form className={classes.formContainer}>
         <label htmlFor='id'>ID</label>
         <input
           type='text'
