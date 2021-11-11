@@ -3,7 +3,6 @@ import Login from './containers/login';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Dashboard from './containers/dashboard';
 import Header from './components/header';
-import ProductList from './containers/productList';
 import Details from './containers/dashboard/details';
 import CreateProduct from './containers/createProduct';
 
