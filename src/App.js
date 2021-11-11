@@ -10,7 +10,7 @@ import CreateProduct from './containers/createProduct';
 function App() {
   return (
     <div className='App'>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path='/login' element={<Login />} />
           <Route path='/' element={<Header />}>
